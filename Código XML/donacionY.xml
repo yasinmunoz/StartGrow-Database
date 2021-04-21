@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<donacion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<proyecto estado="en financiacion">
+		<nombre_p>ReBur</nombre_p>
+        <rating>A</rating>
+        <area>Agricultura Turismo</area>
+	</proyecto>
+	<proyecto estado="financiado">
+		<nombre_p>Circle Zero</nombre_p>
+        <rating>B</rating>
+        <area>Robotica</area>
+	</proyecto>
+
+	<inversor>
+		<nombre_i>Lucia Perez</nombre_i>
+        <dni>15151515E</dni>
+        <saldo>23000</saldo>
+	</inversor>
+	<inversor>
+		<nombre_i>Antonio Garcia</nombre_i>
+        <dni>16161616F</dni>
+        <saldo>1568</saldo>
+	</inversor>
+
+	<donativo>
+		<nombre_p>ReBur</nombre_p>
+        <dni>15151515E</dni>
+		<cantidad>10000</cantidad>
+	</donativo>
+	<donativo>
+		<nombre_p>Circle Zero</nombre_p>
+        <dni>16161616F</dni>
+		<cantidad>500</cantidad>
+	</donativo>
+</donacion>

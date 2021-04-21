@@ -1,0 +1,6 @@
+Cómo validar un xml:
+Arriba en las pestañas
+1) XML > Set Properties...
+2) Desmarcar la casilla "Location defined in Document"
+3) Poner el .xsd en Location
+4) OK

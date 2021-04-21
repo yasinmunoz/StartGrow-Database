@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="donacion" type="TipoDonacion">
+    <xs:key name="ClaveDNI">
+        <xs:selector xpath= "xs:inversor"/>
+        <xs:field xpath="xs:dni"/>
+    </xs:key>
+    <xs:unique name="UProyecto">
+        <xs:selector xpath= "xs:proyecto"/>
+        <xs:field xpath="xs:nombre_p"/>
+    </xs:unique>
+    <xs:keyref name="RefInversor" refer="ClaveDNI">
+        <xs:selector xpath="xs:donativo"/>
+        <xs:field xpath="xs:dni"/>
+    </xs:keyref>
+</xs:element>
+
+<xs:complexType name="TipoDonacion">
+    <xs:sequence>
+	    <xs:element name="proyecto" type="TipoProyecto" maxOccurs="unbounded"/>
+	    <xs:element name="inversor" type="TipoInversor" maxOccurs="unbounded"/>
+	    <xs:element name="donativo" type="TipoDonativo" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="listAreas">
+	<xs:list itemType="xs:string"/>
+</xs:simpleType>
+
+<xs:complexType name="TipoProyecto">
+	<xs:sequence>
+		<xs:element name="nombre_p" type="xs:string"/>
+		<xs:element name="rating" type="xs:string"/>
+		<xs:element name="area" type="listAreas"/>
+	</xs:sequence>
+    <xs:attribute name="estado" use="required" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="TipoInversor">
+	<xs:sequence>
+		<xs:element name="nombre_i" type="xs:string"/>
+		<xs:element name="dni" type="xs:string"/>
+		<xs:element name="saldo" type="xs:decimal"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TipoDonativo">
+	<xs:sequence>
+		<xs:element name="nombre_p" type="xs:string"/>
+		<xs:element name="dni" type="xs:string"/>
+		<xs:element name="cantidad" type="xs:decimal"/>
+	</xs:sequence>
+</xs:complexType>
+
+</xs:schema>
